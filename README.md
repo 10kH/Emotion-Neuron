@@ -2,7 +2,7 @@
 
 > **ACL 2025 Findings** | [Paper](paper/Emotion%20Neuron%20%28ACL%20Findings%202025%29.pdf) · [ACL Anthology](https://aclanthology.org/2025.findings-acl.806/)
 
-Official data & code release for Lee et al., *Findings of ACL 2025*, pp. 15617–15639.
+Post-publication release of the synthetic dialogue dataset and a reconstruction of the experiment code associated with Lee et al., *Findings of ACL 2025*, pp. 15617–15639. See [Contributions](#contributions-for-this-release) below for the scope of this release.
 
 The paper identifies FFN neurons in Llama-3.1-Instruct that selectively respond to each of Ekman's six basic emotions, then analyzes their role by masking them and measuring the effect on emotion classification across layers and ratios.
 
@@ -71,6 +71,27 @@ For each FFN neuron, count the tokens on which it fires (>0) per emotion, normal
     pages     = "15617--15639",
 }
 ```
+
+## Contributions for this release
+
+This repository is a **post-publication release** of artifacts associated with the paper cited above. It is not a claim to be the authoritative implementation used to produce the paper's published numbers. Attribution for this release specifically:
+
+- **Dataset** — `data/emoprism.json.gz` (EmoPrism) was created, verified (SHA-256 documented in [`VERIFICATION.md`](VERIFICATION.md)), and released under [CC-BY-4.0](LICENSE-DATA) by **Woojin Lee**, who was the sole author of the data-generation work described in the paper's Appendix B.
+- **Data-generation pipeline** (`data_generation/`) — authored by **Woojin Lee** as part of the paper's Appendix B pipeline. Released here with hardcoded API keys removed and path handling parameterized; no algorithmic logic was modified.
+- **Experiment code** (`experiments/`) — an **independent reconstruction** from the paper's Section 3.4 methodology, produced after publication specifically for this release. **The original experiment code written by Jaewook Lee is not included in this repository, nor was it consulted during reconstruction.** Where the paper's Eq. 4 (`n = max(0, h)`, ReLU semantics) diverges from Llama-3.1's SwiGLU architecture, the interpretation documented in [`experiments/HOOK_CHOICE.md`](experiments/HOOK_CHOICE.md) was adopted. Any numerical discrepancies between this reconstruction and the paper's reported results are attributable to interpretation choices of this release, not to the paper's authors.
+- **Institutional approval** — release of the data-generation artifacts has been authorized by **Oh-Woog Kwon (ETRI)**.
+- **Paper PDF** (`paper/`) — redistributed under the ACL's CC-BY-4.0 license applicable to Findings of ACL 2025 materials.
+
+### Disclaimer
+
+Co-authors who did not participate in preparing this release retain all their rights under applicable copyright and authorship laws. The inclusion of their names in the citation and in paper-related acknowledgments reflects only their roles as authors of the published paper, **not** as contributors to, endorsers of, or maintainers of this release. Any reservations from a co-author regarding any specific artifact in this repository should be directed to the contact below and will be addressed in good faith.
+
+### Contact
+
+For questions or concerns regarding this release:
+
+- **Release maintainer**: Woojin Lee — <writerwoody@gmail.com>
+- **Institutional contact**: Oh-Woog Kwon — ETRI
 
 ## License
 
