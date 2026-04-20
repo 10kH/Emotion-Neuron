@@ -111,7 +111,7 @@ This repository is a **post-publication release** of artifacts associated with t
 ### Key clarifications
 
 > [!NOTE]
-> The EmoPrism dataset and the generation pipeline under `data_generation/` were primarily constructed by Woojin Lee as the Appendix B contribution to the paper.
+> The EmoPrism dataset and the generation pipeline under `data_generation/` were primarily constructed by Woojin Lee. This data-generation work is documented as Appendix B of the paper.
 
 > [!CAUTION]
 > **The original experiment code written by Jaewook Lee is not included in this repository, nor was it consulted during reconstruction.** All code under `experiments/` is a clean-room implementation derived from the paper's published methodology.
