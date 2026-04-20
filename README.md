@@ -104,7 +104,7 @@ This repository is a **post-publication release** of artifacts associated with t
 - **Data-generation pipeline** (`data_generation/`) — authored by **Woojin Lee** as part of the paper's Appendix B pipeline. Released here with hardcoded API keys removed and path handling parameterized; no algorithmic logic was modified.
 
 > [!NOTE]
-> The EmoPrism dataset and the generation pipeline under `data_generation/` were primarily constructed by Woojin Lee as the Appendix B contribution to the paper. The paper itself was led by Jaewook Lee as first author.
+> The EmoPrism dataset and the generation pipeline under `data_generation/` were primarily constructed by Woojin Lee as the Appendix B contribution to the paper.
 - **Experiment code** (`experiments/`) — an **independent reconstruction** from the paper's Section 3.4 methodology, produced after publication specifically for this release. Where the paper's Eq. 4 (`n = max(0, h)`, ReLU semantics) diverges from Llama-3.1's SwiGLU architecture, the interpretation documented in [`experiments/HOOK_CHOICE.md`](experiments/HOOK_CHOICE.md) was adopted. Any numerical discrepancies between this reconstruction and the paper's reported results are attributable to interpretation choices of this release, not to the paper's authors.
 
 > [!CAUTION]
