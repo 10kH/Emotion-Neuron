@@ -10,15 +10,35 @@ The paper identifies FFN neurons in Llama-3.1-Instruct that selectively respond 
 
 This study comprehensively explores whether there actually exist "emotion neurons" within large language models (LLMs) that selectively process and express certain emotions, and what functional role they play. Drawing on the representative emotion theory of the six basic emotions, we focus on six core emotions. Using synthetic dialogue data labeled with emotions, we identified sets of neurons that exhibit consistent activation patterns for each emotion. As a result, we confirmed that principal neurons handling emotion information do indeed exist within the model, forming distinct groups for each emotion, and that their distribution varies with model size and architectural depth. We then validated the functional significance of these emotion neurons by analyzing whether the prediction accuracy for a specific emotion significantly decreases when those neurons are artificially removed. We observed that in some emotions, the accuracy drops sharply upon neuron removal, while in others, the model's performance largely remains intact or even improves, presumably due to overlapping and complementary mechanisms among neurons. Furthermore, by examining how prediction accuracy changes depending on which layer range and at what proportion the emotion neurons are masked, we revealed that emotion information is processed in a multilayered and complex manner within the model.
 
-## Contents
+## Repository layout
 
-| Path | Purpose |
-|:---|:---|
-| `data/emoprism.json.gz` | **EmoPrism** — 293,725 single-emotion synthetic dialogues across 5,040 topics. |
-| `data_generation/` | 5-step pipeline that produced EmoPrism (Paper Appendix B). |
-| `experiments/` | Reconstructed analysis code — **RQ1** neuron selection, **RQ2** masking evaluation, **RQ3** ratio/layer sweep. |
-| `VERIFICATION.md` | Dataset SHA-256, schema, integrity proof. |
-| `paper/` | Paper PDF. |
+```
+Emotion-Neuron/
+├── data/
+│   ├── emoprism.json.gz        # EmoPrism — 293,725 single-emotion synthetic dialogues (94.6 MB)
+│   ├── emoprism_stats.json
+│   └── download.sh             # decompress + verify SHA-256
+├── data_generation/            # 5-step pipeline that produced EmoPrism (Paper Appendix B)
+│   ├── topic_augmentation/     #   315 → 5,040 topics
+│   ├── dialogue_synthesis/     #   302,400 dialogues (6 emotions × 10 × 5,040)
+│   ├── labeling/               #   3-model labeling + majority vote
+│   └── merging/                #   per-step filter + concat → emoprism.json
+├── experiments/                # Reconstructed analysis code
+│   ├── prompts.py              #   zero-shot classification prompt (Paper Fig 5)
+│   ├── split_data.py           #   stratified 95/5 split
+│   ├── utils.py                #   FFN hooks + zero-ablation
+│   ├── neuron_selection.py     # RQ1 — entropy-based neuron selection
+│   ├── evaluate_masking.py     # RQ2 — masking accuracy evaluation
+│   ├── masking_ratio_layer.py  # RQ3 — ratio × layer-range sweep
+│   ├── HOOK_CHOICE.md          #   SwiGLU-vs-ReLU interpretation
+│   └── README.md               #   flags, compute estimates
+├── paper/                      # Paper PDF
+├── VERIFICATION.md             # dataset SHA-256, schema, integrity proof
+├── LICENSE                     # MIT (code)
+├── LICENSE-DATA                # CC-BY-4.0 (dataset)
+├── requirements.txt
+└── .env.example                # OPENAI/GOOGLE/ANTHROPIC keys template
+```
 
 ## Installation
 
