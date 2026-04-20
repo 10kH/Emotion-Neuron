@@ -104,7 +104,7 @@ This repository is a **post-publication release** of artifacts associated with t
 - **Data-generation pipeline** (`data_generation/`) — authored by **Woojin Lee** as part of the paper's Appendix B pipeline. Released here with hardcoded API keys removed and path handling parameterized; no algorithmic logic was modified.
 
 > [!NOTE]
-> **The EmoPrism dataset and the data-generation pipeline (`data_generation/`) were authored solely by Woojin Lee.** No other co-author contributed to the construction or release of these artifacts, and sole copyright over this release is held by Woojin Lee.
+> The EmoPrism dataset and the generation pipeline under `data_generation/` were primarily constructed by Woojin Lee as the Appendix B contribution to the paper. The paper itself was led by Jaewook Lee as first author.
 - **Experiment code** (`experiments/`) — an **independent reconstruction** from the paper's Section 3.4 methodology, produced after publication specifically for this release. Where the paper's Eq. 4 (`n = max(0, h)`, ReLU semantics) diverges from Llama-3.1's SwiGLU architecture, the interpretation documented in [`experiments/HOOK_CHOICE.md`](experiments/HOOK_CHOICE.md) was adopted. Any numerical discrepancies between this reconstruction and the paper's reported results are attributable to interpretation choices of this release, not to the paper's authors.
 
 > [!CAUTION]
@@ -115,7 +115,7 @@ This repository is a **post-publication release** of artifacts associated with t
 ### Disclaimer
 
 > [!IMPORTANT]
-> Co-authors who did not participate in preparing this release **retain all their rights under applicable copyright and authorship laws**. The inclusion of their names in the citation and in paper-related acknowledgments reflects only their roles as authors of the published paper — **not** as contributors to, endorsers of, or maintainers of this release. Any reservations from a co-author regarding any specific artifact in this repository should be directed to the contact below and will be addressed in good faith.
+> Co-authors of the original paper retain all rights in their respective contributions to the published work. Their names appearing in the citation above reflect their roles as paper co-authors, not as maintainers or endorsers of this release. Questions regarding specific artifacts can be directed to the contact below.
 
 ### Contact
 
