@@ -6,6 +6,10 @@ Post-publication release of the synthetic dialogue dataset and a reconstruction 
 
 The paper identifies FFN neurons in Llama-3.1-Instruct that selectively respond to each of Ekman's six basic emotions, then analyzes their role by masking them and measuring the effect on emotion classification across layers and ratios.
 
+## Abstract
+
+This study comprehensively explores whether there actually exist "emotion neurons" within large language models (LLMs) that selectively process and express certain emotions, and what functional role they play. Drawing on the representative emotion theory of the six basic emotions, we focus on six core emotions. Using synthetic dialogue data labeled with emotions, we identified sets of neurons that exhibit consistent activation patterns for each emotion. As a result, we confirmed that principal neurons handling emotion information do indeed exist within the model, forming distinct groups for each emotion, and that their distribution varies with model size and architectural depth. We then validated the functional significance of these emotion neurons by analyzing whether the prediction accuracy for a specific emotion significantly decreases when those neurons are artificially removed. We observed that in some emotions, the accuracy drops sharply upon neuron removal, while in others, the model's performance largely remains intact or even improves, presumably due to overlapping and complementary mechanisms among neurons. Furthermore, by examining how prediction accuracy changes depending on which layer range and at what proportion the emotion neurons are masked, we revealed that emotion information is processed in a multilayered and complex manner within the model.
+
 ## Contents
 
 | Path | Purpose |
@@ -79,7 +83,7 @@ This repository is a **post-publication release** of artifacts associated with t
 - **Dataset** — `data/emoprism.json.gz` (EmoPrism) was created, verified (SHA-256 documented in [`VERIFICATION.md`](VERIFICATION.md)), and released under [CC-BY-4.0](LICENSE-DATA) by **Woojin Lee**, who was the sole author of the data-generation work described in the paper's Appendix B.
 - **Data-generation pipeline** (`data_generation/`) — authored by **Woojin Lee** as part of the paper's Appendix B pipeline. Released here with hardcoded API keys removed and path handling parameterized; no algorithmic logic was modified.
 - **Experiment code** (`experiments/`) — an **independent reconstruction** from the paper's Section 3.4 methodology, produced after publication specifically for this release. **The original experiment code written by Jaewook Lee is not included in this repository, nor was it consulted during reconstruction.** Where the paper's Eq. 4 (`n = max(0, h)`, ReLU semantics) diverges from Llama-3.1's SwiGLU architecture, the interpretation documented in [`experiments/HOOK_CHOICE.md`](experiments/HOOK_CHOICE.md) was adopted. Any numerical discrepancies between this reconstruction and the paper's reported results are attributable to interpretation choices of this release, not to the paper's authors.
-- **Institutional approval** — release of the data-generation artifacts has been authorized by **Oh-Woog Kwon (ETRI)**.
+- **Institutional approval** — release of the data-generation artifacts has been authorized by **ETRI**.
 - **Paper PDF** (`paper/`) — redistributed under the ACL's CC-BY-4.0 license applicable to Findings of ACL 2025 materials.
 
 ### Disclaimer
@@ -88,10 +92,7 @@ Co-authors who did not participate in preparing this release retain all their ri
 
 ### Contact
 
-For questions or concerns regarding this release:
-
-- **Release maintainer**: Woojin Lee — <writerwoody@gmail.com>
-- **Institutional contact**: Oh-Woog Kwon — ETRI
+For questions or concerns regarding this release, contact **Woojin Lee** — <writerwoody@gmail.com>.
 
 ## License
 
