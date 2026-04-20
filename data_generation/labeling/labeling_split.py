@@ -28,7 +28,7 @@ for label, count in label_counter.items():
 
 # "label"이 "unvalid"가 아닌 항목들을 필터링하여 저장
 valid_dialogues = [dialogue for dialogue in data if dialogue.get("label") != "unvalid"]
-output_file_all = '/home/woody/workspace/Emotion-Neuron/data/step4.json'
+output_file_all = os.environ.get('OUTPUT_FILE', '/home/woody/workspace/Emotion-Neuron/data/step4.json')
 with open(output_file_all, 'w', encoding='utf-8') as f:
     json.dump(valid_dialogues, f, ensure_ascii=False, indent=4)
 print(f"'label'이 'unvalid'가 아닌 항목을 {output_file_all}에 저장했습니다.")

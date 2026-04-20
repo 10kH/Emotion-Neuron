@@ -1,6 +1,12 @@
 MIT License
 
-Copyright (c) 2025 Jaewook Lee, Woojin Lee, Oh-Woog Kwon, Harksoo Kim
+Copyright (c) 2025 Woojin Lee (and contributors to this repository release).
+
+This license covers the code in this repository as published under the
+post-publication release described in README.md § "Contributions for this
+release". Copyright in the underlying paper and its experimental results
+remains with all four paper authors (Jaewook Lee, Woojin Lee, Oh-Woog Kwon,
+Harksoo Kim) as originally published in Findings of ACL 2025.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
