@@ -26,25 +26,13 @@ huggingface-cli login          # gated access to meta-llama/Meta-Llama-3.1-*-Ins
 cd data && bash download.sh    # decompress + verify SHA-256
 ```
 
-## Quick start — 3-minute smoke test
+## Usage
 
 ```bash
-# 1. Deterministic 95/5 stratified split
+# Deterministic 95/5 stratified split
 python experiments/split_data.py --data data/emoprism.json --out runs/split
 
-# 2. RQ1 — select emotion neurons (1,200-sample smoke test, ~3 min on A100)
-CUDA_VISIBLE_DEVICES=0 python experiments/neuron_selection.py \
-    --model meta-llama/Meta-Llama-3.1-8B-Instruct \
-    --train runs/split/train.jsonl --subsample 1200 \
-    --output runs/smoke
-```
-
-Outputs `emotion_neurons.pt`, `counts_summary.csv`, `layer_distribution.csv`.
-
-## Full reproduction
-
-```bash
-# RQ1 — full 8B run (~6 hr on one A100)
+# RQ1 — select emotion neurons
 python experiments/neuron_selection.py \
     --model meta-llama/Meta-Llama-3.1-8B-Instruct \
     --train runs/split/train.jsonl --output runs/sel_8b
@@ -58,17 +46,9 @@ python experiments/masking_ratio_layer.py --run-dir runs/sel_8b \
     --eval runs/split/eval.jsonl --output runs/rq3_8b
 ```
 
-For 70B, use `--model meta-llama/Meta-Llama-3.1-70B-Instruct` with 4 × A100 / `device_map="auto"`.
+For 70B, use `--model meta-llama/Meta-Llama-3.1-70B-Instruct`.
 
-### Key flags
-
-| Flag | Default | Purpose |
-|:---|:---|:---|
-| `--activation_mode` | `gated` | SwiGLU hook site (`gated` \| `silu_only` \| `pre_silu`) — see [HOOK_CHOICE.md](experiments/HOOK_CHOICE.md). |
-| `--token_mode` | `last` | `last` = final assistant-content token (default); `all` ≈ 30× compute. |
-| `--top_pct` | `0.01` | Fraction of globally lowest-entropy neurons kept as "emotion neurons". |
-
-See [`experiments/README.md`](experiments/README.md) for compute estimates and artifact layout.
+See [`experiments/README.md`](experiments/README.md) for all CLI flags (activation mode, token mode, subsampling) and the SwiGLU hook interpretation in [`experiments/HOOK_CHOICE.md`](experiments/HOOK_CHOICE.md).
 
 ## Methodology (one-paragraph summary)
 
