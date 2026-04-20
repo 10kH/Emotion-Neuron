@@ -1,0 +1,30 @@
+# Secrets
+.env
+.env.local
+*.key
+*.pem
+credentials.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Data (keep .gz only, not raw)
+emoprism.json
+!data/emoprism.json.gz
+*.log
+
+# Backups from old pipeline
+backup*/
+backup_*/
+
+# OMC / Claude agent scaffolding
+.omc/
+.claude/
+CLAUDE.md
+
+# OS
+.DS_Store
+Thumbs.db

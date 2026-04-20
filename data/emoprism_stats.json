@@ -1,0 +1,70 @@
+{
+    "overall": {
+        "label_counts": {
+            "anger": 49015,
+            "disgust": 49232,
+            "fear": 50166,
+            "happiness": 55054,
+            "sadness": 51549,
+            "surprise": 38709
+        },
+        "total_dialogues": 293725
+    },
+    "individual_file_stats": {
+        "step0.json": {
+            "label_counts": {
+                "anger": 3065,
+                "disgust": 3055,
+                "fear": 3093,
+                "happiness": 3462,
+                "sadness": 3241,
+                "surprise": 2477
+            },
+            "total_dialogues": 18393
+        },
+        "step1.json": {
+            "label_counts": {
+                "anger": 3063,
+                "disgust": 3065,
+                "fear": 3141,
+                "happiness": 3442,
+                "sadness": 3211,
+                "surprise": 2425
+            },
+            "total_dialogues": 18347
+        },
+        "step2.json": {
+            "label_counts": {
+                "anger": 6160,
+                "disgust": 6170,
+                "fear": 6275,
+                "happiness": 6877,
+                "sadness": 6398,
+                "surprise": 4860
+            },
+            "total_dialogues": 36740
+        },
+        "step3.json": {
+            "label_counts": {
+                "anger": 12248,
+                "disgust": 12303,
+                "fear": 12617,
+                "happiness": 13811,
+                "sadness": 12844,
+                "surprise": 9533
+            },
+            "total_dialogues": 73356
+        },
+        "step4.json": {
+            "label_counts": {
+                "anger": 24479,
+                "disgust": 24639,
+                "fear": 25040,
+                "happiness": 27462,
+                "sadness": 25855,
+                "surprise": 19414
+            },
+            "total_dialogues": 146889
+        }
+    }
+}
