@@ -88,10 +88,10 @@ Label distribution (final, after 3-model majority-vote filtering):
 | Emotion | Count | % |
 |:---|---:|---:|
 | happiness | 55,054 | 18.74 % |
-| sadness   | 51,549 | 17.55 % |
+| sadness   | 51,549 | 17.54 % |
 | fear      | 50,166 | 17.08 % |
 | disgust   | 49,232 | 16.76 % |
-| anger     | 49,015 | 16.69 % |
+| anger     | 49,015 | 16.68 % |
 | surprise  | 38,709 | 13.18 % |
 | **Total** | **293,725** | **100.00 %** |
 
