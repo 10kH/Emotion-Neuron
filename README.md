@@ -102,6 +102,9 @@ This repository is a **post-publication release** of artifacts associated with t
 
 - **Dataset** — `data/emoprism.json.gz` (EmoPrism) was created, verified (SHA-256 documented in [`VERIFICATION.md`](VERIFICATION.md)), and released under [CC-BY-4.0](LICENSE-DATA) by **Woojin Lee**, who was the sole author of the data-generation work described in the paper's Appendix B.
 - **Data-generation pipeline** (`data_generation/`) — authored by **Woojin Lee** as part of the paper's Appendix B pipeline. Released here with hardcoded API keys removed and path handling parameterized; no algorithmic logic was modified.
+
+> [!NOTE]
+> **The EmoPrism dataset and the data-generation pipeline (`data_generation/`) were authored solely by Woojin Lee.** No other co-author contributed to the construction or release of these artifacts, and sole copyright over this release is held by Woojin Lee.
 - **Experiment code** (`experiments/`) — an **independent reconstruction** from the paper's Section 3.4 methodology, produced after publication specifically for this release. Where the paper's Eq. 4 (`n = max(0, h)`, ReLU semantics) diverges from Llama-3.1's SwiGLU architecture, the interpretation documented in [`experiments/HOOK_CHOICE.md`](experiments/HOOK_CHOICE.md) was adopted. Any numerical discrepancies between this reconstruction and the paper's reported results are attributable to interpretation choices of this release, not to the paper's authors.
 
 > [!CAUTION]
