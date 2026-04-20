@@ -98,21 +98,23 @@ For each FFN neuron, count the tokens on which it fires (>0) per emotion, normal
 
 ## Contributions for this release
 
-This repository is a **post-publication release** of artifacts associated with the paper cited above. It is not a claim to be the authoritative implementation used to produce the paper's published numbers. Attribution for this release specifically:
+This repository is a **post-publication release** of artifacts associated with the paper cited above. It is not a claim to be the authoritative implementation used to produce the paper's published numbers.
 
-- **Dataset** — `data/emoprism.json.gz` (EmoPrism) was created, verified (SHA-256 documented in [`VERIFICATION.md`](VERIFICATION.md)), and released under [CC-BY-4.0](LICENSE-DATA) by **Woojin Lee**, who was the sole author of the data-generation work described in the paper's Appendix B.
-- **Data-generation pipeline** (`data_generation/`) — authored by **Woojin Lee** as part of the paper's Appendix B pipeline. Released here with hardcoded API keys removed and path handling parameterized; no algorithmic logic was modified.
+### Attribution
 
-> [!NOTE]
-> The EmoPrism dataset and the generation pipeline under `data_generation/` were primarily constructed by Woojin Lee as the Appendix B contribution to the paper.
-- **Experiment code** (`experiments/`) — an **independent reconstruction** from the paper's Section 3.4 methodology, produced after publication specifically for this release. Where the paper's Eq. 4 (`n = max(0, h)`, ReLU semantics) diverges from Llama-3.1's SwiGLU architecture, the interpretation documented in [`experiments/HOOK_CHOICE.md`](experiments/HOOK_CHOICE.md) was adopted. Any numerical discrepancies between this reconstruction and the paper's reported results are attributable to interpretation choices of this release, not to the paper's authors.
-
-> [!CAUTION]
-> **The original experiment code written by Jaewook Lee is not included in this repository, nor was it consulted during reconstruction.** All code under `experiments/` is a clean-room implementation derived from the paper's published methodology.
+- **Dataset** (`data/emoprism.json.gz`) — created, verified (SHA-256 in [`VERIFICATION.md`](VERIFICATION.md)), and released under [CC-BY-4.0](LICENSE-DATA) by **Woojin Lee**, who was the sole author of the data-generation work described in the paper's Appendix B.
+- **Data-generation pipeline** (`data_generation/`) — authored by **Woojin Lee** as part of Appendix B. Released here with hardcoded API keys removed and path handling parameterized; no algorithmic logic was modified.
+- **Experiment code** (`experiments/`) — an **independent reconstruction** from the paper's Section 3.4 methodology, produced after publication specifically for this release. Where the paper's Eq. 4 (`n = max(0, h)`, ReLU semantics) diverges from Llama-3.1's SwiGLU architecture, the interpretation in [`experiments/HOOK_CHOICE.md`](experiments/HOOK_CHOICE.md) was adopted. Any numerical discrepancies between this reconstruction and the paper's reported results are attributable to interpretation choices of this release, not to the paper's authors.
 - **Institutional approval** — release of the data-generation artifacts has been authorized by **ETRI**.
 - **Paper PDF** (`paper/`) — redistributed under the ACL's CC-BY-4.0 license applicable to Findings of ACL 2025 materials.
 
-### Disclaimer
+### Key clarifications
+
+> [!NOTE]
+> The EmoPrism dataset and the generation pipeline under `data_generation/` were primarily constructed by Woojin Lee as the Appendix B contribution to the paper.
+
+> [!CAUTION]
+> **The original experiment code written by Jaewook Lee is not included in this repository, nor was it consulted during reconstruction.** All code under `experiments/` is a clean-room implementation derived from the paper's published methodology.
 
 > [!IMPORTANT]
 > Co-authors of the original paper retain all rights in their respective contributions to the published work. Their names appearing in the citation above reflect their roles as paper co-authors, not as maintainers or endorsers of this release. Questions regarding specific artifacts can be directed to the contact below.
