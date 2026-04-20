@@ -102,13 +102,17 @@ This repository is a **post-publication release** of artifacts associated with t
 
 - **Dataset** — `data/emoprism.json.gz` (EmoPrism) was created, verified (SHA-256 documented in [`VERIFICATION.md`](VERIFICATION.md)), and released under [CC-BY-4.0](LICENSE-DATA) by **Woojin Lee**, who was the sole author of the data-generation work described in the paper's Appendix B.
 - **Data-generation pipeline** (`data_generation/`) — authored by **Woojin Lee** as part of the paper's Appendix B pipeline. Released here with hardcoded API keys removed and path handling parameterized; no algorithmic logic was modified.
-- **Experiment code** (`experiments/`) — an **independent reconstruction** from the paper's Section 3.4 methodology, produced after publication specifically for this release. **The original experiment code written by Jaewook Lee is not included in this repository, nor was it consulted during reconstruction.** Where the paper's Eq. 4 (`n = max(0, h)`, ReLU semantics) diverges from Llama-3.1's SwiGLU architecture, the interpretation documented in [`experiments/HOOK_CHOICE.md`](experiments/HOOK_CHOICE.md) was adopted. Any numerical discrepancies between this reconstruction and the paper's reported results are attributable to interpretation choices of this release, not to the paper's authors.
+- **Experiment code** (`experiments/`) — an **independent reconstruction** from the paper's Section 3.4 methodology, produced after publication specifically for this release. Where the paper's Eq. 4 (`n = max(0, h)`, ReLU semantics) diverges from Llama-3.1's SwiGLU architecture, the interpretation documented in [`experiments/HOOK_CHOICE.md`](experiments/HOOK_CHOICE.md) was adopted. Any numerical discrepancies between this reconstruction and the paper's reported results are attributable to interpretation choices of this release, not to the paper's authors.
+
+> [!CAUTION]
+> **The original experiment code written by Jaewook Lee is not included in this repository, nor was it consulted during reconstruction.** All code under `experiments/` is a clean-room implementation derived from the paper's published methodology.
 - **Institutional approval** — release of the data-generation artifacts has been authorized by **ETRI**.
 - **Paper PDF** (`paper/`) — redistributed under the ACL's CC-BY-4.0 license applicable to Findings of ACL 2025 materials.
 
 ### Disclaimer
 
-Co-authors who did not participate in preparing this release retain all their rights under applicable copyright and authorship laws. The inclusion of their names in the citation and in paper-related acknowledgments reflects only their roles as authors of the published paper, **not** as contributors to, endorsers of, or maintainers of this release. Any reservations from a co-author regarding any specific artifact in this repository should be directed to the contact below and will be addressed in good faith.
+> [!IMPORTANT]
+> Co-authors who did not participate in preparing this release **retain all their rights under applicable copyright and authorship laws**. The inclusion of their names in the citation and in paper-related acknowledgments reflects only their roles as authors of the published paper — **not** as contributors to, endorsers of, or maintainers of this release. Any reservations from a co-author regarding any specific artifact in this repository should be directed to the contact below and will be addressed in good faith.
 
 ### Contact
 
